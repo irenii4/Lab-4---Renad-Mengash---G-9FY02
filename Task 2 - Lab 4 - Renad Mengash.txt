@@ -1,0 +1,34 @@
+Task 2 - Lab 4
+
+32 ?- consult(['c:/Users/renad/Downloads/Lab04_family_facts.pl']).
+true.
+
+% Query 1: Find and display the names of all females in the family.
+33 ?- female(X).
+X = sara ;
+X = nora.
+
+% Query 2: Check whether there is at least one male in the family.
+34 ?- male(_).
+true .
+
+% Query 3: Find the grandparent of Faisal.
+35 ?- parent(X, Y), parent(Y, faisal).
+X = ali,
+Y = muhammad .
+
+
+% Query 4: Find all daughters of Ahmad.
+36 ?- parent(ahmad, X), female(X).
+X = sara ;
+X = nora .
+
+
+% Query 5: Check whether Ahmad and Muhammad have a common parent.
+37 ?- parent(X, ahmad), parent(X, muhammad).
+X = ali.
+
+
+% Query 6: Check whether Khan is the brother of Nora.
+38 ?- male(khan), parent(X, khan), parent(X, nora).
+X = ahmad.
